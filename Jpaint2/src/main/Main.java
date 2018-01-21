@@ -22,8 +22,11 @@ public class Main {
         
         ApplicationState appState = new ApplicationState(uiModule);//gets and sets the responses ala colors
         
-        IJPaintController controller = new JPaintController(uiModule, appState);  //sets up events ala  activePrimaryColor = ShapeColor.BLUE;
+        IJPaintController controller = new JPaintController(uiModule, appState);  //sets up events ala  activePrimaryColor = ShapeColor.BLUE;Jpaint2/src/main/Main.java
         controller.setup();
+        
+        
+      
     }
 	//test of git
 }
