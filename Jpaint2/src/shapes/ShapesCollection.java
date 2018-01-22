@@ -23,7 +23,7 @@ public class ShapesCollection {
 		int index =shapesArray.indexOf(shape);
 		if(index == -1){
 			return;
-		}
+		}//end if
 		shapesArray.remove(index);
 		
 	}//end remove

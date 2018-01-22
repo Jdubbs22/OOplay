@@ -8,12 +8,12 @@ public class Elipse implements IShape {
 	public Point getOriginPosition() {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	}//end get
 
 	@Override
 	public void setOriginPostion(Point p) {
 		// TODO Auto-generated method stub
 
-	}
+	}//end set
 
-}
+}//end elipse

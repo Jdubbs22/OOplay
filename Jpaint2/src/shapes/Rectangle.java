@@ -13,24 +13,24 @@ public class Rectangle implements IShape{
 	public Point getOriginPosition(){
 		return origin;
 		
-	}
+	}//end getter
 	
 	public void setOriginPostion(Point p){
 		origin = p;
-	}
+	}//end set
 	
 	public void setHightWidth (int h, int w){
 		hieght =h;
 		width =w;
 		
-	}
+	}//end set
 	
 	public int getHieght(){
 		return hieght;
-	}
+	}//end get
 	
 	public int getWidth(){
 		return width;
-	}
+	}//end get
 	
-}
+}//end rectangle
