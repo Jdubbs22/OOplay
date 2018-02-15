@@ -2,7 +2,7 @@ package shapes;
 
 import java.awt.Point;
 
-public class Rectangle implements IShape{
+ class Rectangle implements IShape{
 
 	
 	int hieght;

@@ -9,7 +9,7 @@ public class ShapesCollection {
 		
 	}//end constructor
 	
-	private ArrayList<IShape> shapesArray;
+	private final ArrayList<IShape> shapesArray; //added final keyword
 	
 	public void insertShape(IShape shape){
 		if(shape == null){

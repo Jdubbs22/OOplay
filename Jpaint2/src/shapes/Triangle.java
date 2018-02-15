@@ -2,12 +2,13 @@ package shapes;
 
 import java.awt.Point;
 
-public class Triangle implements IShape {
-
+ class Triangle implements IShape {  //removed public to make package private
+	 								//will do the same for rectangle and elipse
 	@Override
 	public Point getOriginPosition() {
 		// TODO Auto-generated method stub
 		return null;
+	
 	}//end get
 
 	@Override
@@ -16,4 +17,5 @@ public class Triangle implements IShape {
 
 	}//end set
 
+	
 }//end triangle

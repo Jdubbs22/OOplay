@@ -2,7 +2,7 @@ package shapes;
 
 import java.awt.Point;
 
-public class Elipse implements IShape {
+ class Elipse implements IShape {
 
 	@Override
 	public Point getOriginPosition() {
