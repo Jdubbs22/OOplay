@@ -34,6 +34,7 @@ public class Main {
        MousePaintController testMouse = new MousePaintController(paintTest); 
        paintTest.addMouseListener(testMouse.getListener()); 
        paintTest.addMouseMotionListener(testMouse.getListener());
+       
       
     }
 	//test of git
