@@ -9,8 +9,10 @@ import java.awt.geom.Ellipse2D;
 
 import view.PaintCanvas;
 public class MousePaintController {
-	PaintCanvas component;
-	Graphics2D render;
+	//IJPaintController paintcontroller;
+	RenderControler render;
+//	PaintCanvas component;
+//	Graphics2D render;
 	MouseAdapter mouse1 = new MouseAdapter(){  //move into a strategy pattern
 		int orginX;
 		int orginY;
@@ -24,14 +26,14 @@ public class MousePaintController {
 			
 			orginX = e.getX();
 			orginY = e.getY();
-			shape = new Ellipse2D.Double(orginX,orginY,0,0);
+		/*	shape = new Ellipse2D.Double(orginX,orginY,0,0);
 			//render.draw(shape);
 			System.out.println("Test of mouse");
-			triangle = new Polygon();  //???
+			triangle = new Polygon();  //???  */
 		
 			
 		}//end mousepressed  
-		@Override
+	/*	@Override
 		public void mouseDragged(MouseEvent e){
 			int deltaX;
 			int deltaY;
@@ -47,14 +49,17 @@ public class MousePaintController {
 			
 			System.out.println("test of mouseMoved");
 			
-		}//end mousemoved
+		}//end mousemoved  */
 		
 		@Override
 		public void mouseReleased(MouseEvent e){
-		render.draw(shape); 
-		render.setColor(color.blue);
-		render.fill(shape);
+			int endX= e.getX();
+			int endY = e.getY();
+		//render.draw(shape); 
+		//render.setColor(color.blue);
+		//render.fill(shape);
 		//	render.draw(triangle);
+			render.DrawShapeAtPoints(orginX, orginY, endX, endY);
 			
 		}//end mouseReleased
 		
@@ -67,9 +72,8 @@ public class MousePaintController {
 		
 	}
 	
-	public MousePaintController (PaintCanvas pc){
-		component = pc;
-	render = pc.getGraphics2D();
+	public MousePaintController (RenderControler render){
+	this.render=render;
 		
 	}
 	

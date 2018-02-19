@@ -4,6 +4,7 @@ import javax.swing.JButton;
 import controller.IJPaintController;
 import controller.JPaintController;
 import controller.MousePaintController;
+import controller.RenderControler;
 import model.DialogProvider;
 import model.IDialogProvider;
 import model.ShapeColor;
@@ -30,8 +31,8 @@ public class Main {
         controller.setup();
         
       //  paintTest.testDraw();  
-        
-       MousePaintController testMouse = new MousePaintController(paintTest); 
+        RenderControler rendControl = new RenderControler(paintTest,appState);
+       MousePaintController testMouse = new MousePaintController(rendControl); //connecting mousepaintcontroller to rendercontroller
        paintTest.addMouseListener(testMouse.getListener()); 
        paintTest.addMouseMotionListener(testMouse.getListener());
        
