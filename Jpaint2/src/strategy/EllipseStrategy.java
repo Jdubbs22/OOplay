@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
 
-public class EllipseStrategy  implements IStratMousePaintController{
+public class EllipseStrategy  implements IStratShape{
 
 
 

@@ -2,18 +2,69 @@ package shapes;
 
 import java.awt.Point;
 
- class Elipse implements IShape {
+import model.ShapeColor;
+import model.ShapeShadingType;
 
+ class Elipse implements IShape {
+	 Elipse(Point startPoint, Point endPoint,ShapeColor primary, ShapeColor secondary, ShapeShadingType shadeType){
+		 this.startPoint= startPoint;
+		 this.endPoint = endPoint;
+		 this.primary = primary;
+		 this.secondary = secondary;
+		 this.shadeType = shadeType;
+	 }
+	 
+	 Point startPoint;
+	 Point endPoint;
+	 ShapeColor primary;
+	 ShapeColor secondary;
+	 ShapeShadingType shadeType;
 	@Override
 	public Point getOriginPosition() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return  startPoint;
 	}//end get
 
 	@Override
 	public void setOriginPostion(Point p) {
-		// TODO Auto-generated method stub
+		startPoint = p;
 
+	}//end set
+
+	@Override
+	public ShapeName getType() {
+		
+		return ShapeName.ELLIPSE;
+	}//end get
+
+	@Override
+	public ShapeColor getOutlineColor() {
+		
+		return primary;
+	}//end get
+
+	@Override
+	public ShapeColor getFillColor() {
+		
+		return secondary;
+	}//end get
+
+	@Override
+	public ShapeShadingType getShadingType() {
+		
+		return shadeType;
+	}//end get
+
+	@Override
+	public Point getEndPoint() {
+		
+		return endPoint;
+	}//end get
+
+	@Override
+	public void setEndPoint(Point p) {
+	endPoint=p;
+		
 	}//end set
 
 }//end elipse

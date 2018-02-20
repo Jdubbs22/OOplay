@@ -2,35 +2,70 @@ package shapes;
 
 import java.awt.Point;
 
- class Rectangle implements IShape{
+import model.ShapeColor;
+import model.ShapeShadingType;
 
-	
-	int hieght;
-	int width; 
-	Point origin;
-	
-	
-	public Point getOriginPosition(){
-		return origin;
-		
-	}//end getter
-	
-	public void setOriginPostion(Point p){
-		origin = p;
-	}//end set
-	
-	public void setHightWidth (int h, int w){
-		hieght =h;
-		width =w;
-		
-	}//end set
-	
-	public int getHieght(){
-		return hieght;
-	}//end get
-	
-	public int getWidth(){
-		return width;
-	}//end get
-	
-}//end rectangle
+ class Rectangle implements IShape{
+	 
+		 Rectangle(Point startPoint, Point endPoint,ShapeColor primary, ShapeColor secondary, ShapeShadingType shadeType){
+			 this.startPoint= startPoint;
+			 this.endPoint = endPoint;
+			 this.primary = primary;
+			 this.secondary = secondary;
+			 this.shadeType = shadeType;
+		 }
+
+	 Point startPoint;
+	 Point endPoint;
+	 ShapeColor primary;
+	 ShapeColor secondary;
+	 ShapeShadingType shadeType;
+	 @Override
+		public Point getOriginPosition() {
+			
+			return  startPoint;
+		}//end get
+
+		@Override
+		public void setOriginPostion(Point p) {
+			startPoint = p;
+
+		}//end set
+
+		@Override
+		public ShapeName getType() {
+			
+			return ShapeName.RECTANGLE;
+		}//end get
+
+		@Override
+		public ShapeColor getOutlineColor() {
+			
+			return primary;
+		}//end get
+
+		@Override
+		public ShapeColor getFillColor() {
+			
+			return secondary;
+		}//end get
+
+		@Override
+		public ShapeShadingType getShadingType() {
+			
+			return shadeType;
+		}//end get
+
+		@Override
+		public Point getEndPoint() {
+			
+			return endPoint;
+		}//end get
+
+		@Override
+		public void setEndPoint(Point p) {
+		endPoint=p;
+			
+		}//end set
+
+	}//end rectangle

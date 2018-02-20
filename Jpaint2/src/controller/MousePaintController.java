@@ -1,6 +1,7 @@
 package controller;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Point;
 import java.awt.Polygon;
 import java.awt.Shape;
 import  java.awt.event.MouseAdapter;
@@ -12,18 +13,19 @@ public class MousePaintController {
 	//IJPaintController paintcontroller;
 	RenderControler render;
 //	PaintCanvas component;
-//	Graphics2D render;
+//	Graphics2D render1;
 	MouseAdapter mouse1 = new MouseAdapter(){  //move into a strategy pattern
 		int orginX;
 		int orginY;
 		Ellipse2D shape;
 		Polygon triangle;
 		Color color;
-		
+		Point start;  //added for test
+		Point end;
 		@Override
 	
 		public void mousePressed(MouseEvent e){
-			
+			start = e.getPoint();
 			orginX = e.getX();
 			orginY = e.getY();
 		/*	shape = new Ellipse2D.Double(orginX,orginY,0,0);
@@ -53,10 +55,11 @@ public class MousePaintController {
 		
 		@Override
 		public void mouseReleased(MouseEvent e){
+			end = e.getPoint();
 			int endX= e.getX();
 			int endY = e.getY();
 		//render.draw(shape); 
-		//render.setColor(color.blue);
+		//render1.setColor(color.blue);
 		//render.fill(shape);
 		//	render.draw(triangle);
 			render.DrawShapeAtPoints(orginX, orginY, endX, endY);
