@@ -1,4 +1,10 @@
 package shapes;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import controller.MousePaintController;
+import model.ApplicationState;
+import model.IApplicationState;
 import shapes.ShapeName;
 public class ShapeFactory {
 /*
@@ -15,15 +21,23 @@ public class ShapeFactory {
 	}//end createTri
 	*/
 	
-	private ShapeFactory(){
+	private IApplicationState appState;
+	ApplicationState currentState;//??? see below
+	public ApplicationState getCurrentState() {///??? just a guess
+		return currentState;
+	}
+	
+	
+	private ShapeFactory(IApplicationState appState){
 		
 	}
 	
 	public static IShape createShape(ShapeName shapeName){
 		IShape shape = null;
+		
 		switch (shapeName){
 		case ELLIPSE:
-			shape = new Elipse();
+			shape = new Elipse(MouseEvent.MOUSE_PRESSED,MouseEvent.MOUSE_RELEASED );
 			break;
 		case RECTANGLE:
 			shape = new Rectangle();

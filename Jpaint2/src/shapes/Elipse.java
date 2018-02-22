@@ -1,11 +1,20 @@
 package shapes;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.geom.Ellipse2D;
 
 import model.ShapeColor;
 import model.ShapeShadingType;
 
  class Elipse implements IShape {
+	 
+	 Elipse(Point startPoint, Point endpoint){
+		 this.startPoint=startPoint;
+		 this.endPoint=endpoint;
+	 }
+	 
 	 Elipse(Point startPoint, Point endPoint,ShapeColor primary, ShapeColor secondary, ShapeShadingType shadeType){
 		 this.startPoint= startPoint;
 		 this.endPoint = endPoint;
@@ -66,5 +75,12 @@ import model.ShapeShadingType;
 	endPoint=p;
 		
 	}//end set
+	
+	public void draw(int startX, int startY, int endX, int endY, Graphics2D render, Color color,Color secondColor, boolean fill) {
+		Ellipse2D ellipse= new Ellipse2D.Double( startX,  startY,  endX-startX,  endY-startY);
+			
+			render.draw(ellipse);
+			
+		}
 
 }//end elipse
