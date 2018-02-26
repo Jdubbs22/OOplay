@@ -18,11 +18,35 @@ public class ApplicationState implements IApplicationState {
     private ShapeShadingType activeShapeShadingType;
     private StartAndEndPointMode activeStartAndEndPointMode;
 
-    public ApplicationState(IUiModule uiModule) {
-        this.uiModule = uiModule;
-        this.dialogProvider = new DialogProvider(this);
-        setDefaults();
+   private  ApplicationState(IUiModule uiModule) {
+	   this.uiModule = uiModule;
+       this.dialogProvider = new DialogProvider(this);
+       setDefaults();
     }
+   
+   public void setUiModule(IUiModule uiModule){
+	  
+   }
+   public static void initializeSingleton(IUiModule uiModule){
+	   if(instance != null){
+		   throw new RuntimeException("initialized called twice");
+	   }
+	   instance = new ApplicationState(uiModule);
+	   
+	   
+   }
+    
+    private static ApplicationState instance;
+    
+    public static ApplicationState getInstance(){
+    	if(instance == null){
+    		throw new RuntimeException(" initialization has not been called");
+    		}
+    	return instance;
+    }
+    
+    
+    
 
     @Override
     public void setActiveShape() {

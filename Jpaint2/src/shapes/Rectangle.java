@@ -1,5 +1,7 @@
 package shapes;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
 import java.awt.Point;
 
 import model.ShapeColor;
@@ -67,5 +69,11 @@ import model.ShapeShadingType;
 		endPoint=p;
 			
 		}//end set
+		
+		public void draw(int startX, int startY, int endX, int endY, Graphics2D render, Color color,Color secondColor, boolean fill) {
+			render.drawRect(startX, startY, endX-startX, endY-startY);
+			
+			}//end draw
+
 
 	}//end rectangle

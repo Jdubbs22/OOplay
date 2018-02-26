@@ -1,5 +1,8 @@
 package controller;
 import java.awt.Color;
+import undo_redoCommand.DrawHistory;
+import undo_redoCommand.drawShapeCommand;
+
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Polygon;
@@ -58,11 +61,14 @@ public class MousePaintController {
 			end = e.getPoint();
 			int endX= e.getX();
 			int endY = e.getY();
+			drawShapeCommand getCommand = new drawShapeCommand(start, end);
 		//render.draw(shape); 
 		//render1.setColor(color.blue);
 		//render.fill(shape);
 		//	render.draw(triangle);
-			render.DrawShapeAtPoints(orginX, orginY, endX, endY);
+		//	render.DrawShapeAtPoints(orginX, orginY, endX, endY);
+			DrawHistory.add(getCommand);
+			getCommand.run();
 			
 		}//end mouseReleased
 		

@@ -1,4 +1,5 @@
 package shapes;
+import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -19,31 +20,38 @@ public class ShapeFactory {
 	public static IShape createTriangle(){
 		return new Triangle();
 	}//end createTri
-	*/
+	
 	
 	private IApplicationState appState;
 	ApplicationState currentState;//??? see below
 	public ApplicationState getCurrentState() {///??? just a guess
 		return currentState;
 	}
+	*/
 	
-	
-	private ShapeFactory(IApplicationState appState){
+	//private ShapeFactory(IApplicationState appState){
 		
-	}
+//	}
 	
-	public static IShape createShape(ShapeName shapeName){
+	
+	
+	public static IShape createShape(Point startPoint, Point endPoint){
 		IShape shape = null;
+		ApplicationState current =ApplicationState.getInstance();
 		
-		switch (shapeName){
+		switch (current.getActiveShapeType()){
 		case ELLIPSE:
-			shape = new Elipse(MouseEvent.MOUSE_PRESSED,MouseEvent.MOUSE_RELEASED );
+			shape = new Elipse(startPoint, endPoint,current.getActivePrimaryColor(),
+					current.getActiveSecondaryColor(),
+					current.getActiveShapeShadingType());
 			break;
 		case RECTANGLE:
-			shape = new Rectangle();
+			shape = new Rectangle(startPoint, endPoint,current.getActivePrimaryColor(),
+					current.getActiveSecondaryColor(),current.getActiveShapeShadingType());
 			break;
 		case TRIANGLE:
-			shape = new Triangle();
+			shape = new Triangle(startPoint, endPoint,current.getActivePrimaryColor(),
+					current.getActiveSecondaryColor(),current.getActiveShapeShadingType());
 			break;
 		}
 		return shape;

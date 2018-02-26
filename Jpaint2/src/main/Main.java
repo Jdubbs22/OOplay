@@ -25,14 +25,16 @@ public class Main {
         
         IUiModule uiModule = new Gui(guiWindow);  //gui takes the getDialogResponse and addevent
         
-        ApplicationState appState = new ApplicationState(uiModule);//gets and sets the responses ala colors
+        ApplicationState.initializeSingleton(uiModule);// created a singleton to represent appstate
         
-        IJPaintController controller = new JPaintController(uiModule, appState);  //sets up events ala  activePrimaryColor = ShapeColor.BLUE;Jpaint2/src/main/Main.java
+      //  ApplicationState appState = new ApplicationState(uiModule);//gets and sets the responses ala colors
+        
+        IJPaintController controller = new JPaintController(uiModule, ApplicationState.getInstance());  //sets up events ala  activePrimaryColor = ShapeColor.BLUE;Jpaint2/src/main/Main.java
         controller.setup();
-        
+       RenderControler.initializeSingle(paintTest);
       //  paintTest.testDraw();  
-        RenderControler rendControl = new RenderControler(paintTest,appState);
-       MousePaintController testMouse = new MousePaintController(rendControl); //connecting mousepaintcontroller to rendercontroller
+       // RenderControler rendControl = new RenderControler(paintTest,ApplicationState.getInstance());// replaced appstate
+       MousePaintController testMouse = new MousePaintController(RenderControler.getInstance()); //connecting mousepaintcontroller to rendercontroller
        paintTest.addMouseListener(testMouse.getListener()); 
        paintTest.addMouseMotionListener(testMouse.getListener());
        

@@ -2,7 +2,7 @@ package shapes;
 
 import java.util.ArrayList;
 
-public class ShapesCollection {
+public class ShapesCollection {  
 	
 	ShapesCollection(){
 		 shapesArray = new ArrayList<IShape>();

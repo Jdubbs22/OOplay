@@ -81,6 +81,6 @@ import model.ShapeShadingType;
 			
 			render.draw(ellipse);
 			
-		}
+		}//end draw
 
 }//end elipse

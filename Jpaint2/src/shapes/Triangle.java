@@ -1,6 +1,9 @@
 package shapes;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.geom.Ellipse2D;
 
 import model.ShapeColor;
 import model.ShapeShadingType;
@@ -67,5 +70,13 @@ import model.ShapeShadingType;
 	endPoint=p;
 		
 	}//end set
+	
+	public void draw(int startX, int startY, int endX, int endY, Graphics2D render, Color color,Color secondColor, boolean fill) {
+		int[] xPoints = {startX,endX,startX};
+		int[] yPoints= {startY,endY,endY};
+		
+		render.drawPolygon(xPoints, yPoints, 3);
+			
+		}//end draw
 
 }//end rectangle

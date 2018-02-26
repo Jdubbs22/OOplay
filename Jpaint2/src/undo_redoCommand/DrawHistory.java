@@ -1,7 +1,7 @@
 package undo_redoCommand;
 import java.util.Stack;
 
-class DrawHistory {
+public class DrawHistory {
 	private final static Stack<IUndoRedo> undoStack = new Stack<IUndoRedo>();
 	private  final static Stack<IUndoRedo> redoStack = new Stack<IUndoRedo>();
 //constructor that takes in appstate in a member variable
