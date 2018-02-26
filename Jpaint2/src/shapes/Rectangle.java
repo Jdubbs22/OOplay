@@ -7,7 +7,7 @@ import java.awt.Point;
 import model.ShapeColor;
 import model.ShapeShadingType;
 
- class Rectangle implements IShape{
+ class Rectangle  implements IShape{
 	 
 		 Rectangle(Point startPoint, Point endPoint,ShapeColor primary, ShapeColor secondary, ShapeShadingType shadeType){
 			 this.startPoint= startPoint;

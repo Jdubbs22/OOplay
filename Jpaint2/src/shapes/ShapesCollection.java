@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ShapesCollection {  
 	
-	ShapesCollection(){
+	public ShapesCollection(){
 		 shapesArray = new ArrayList<IShape>();
 		
 	}//end constructor
