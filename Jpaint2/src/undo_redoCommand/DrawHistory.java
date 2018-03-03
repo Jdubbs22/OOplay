@@ -9,7 +9,7 @@ public class DrawHistory {
 	public static void add(IUndoRedo cmd) {  //added static
 		undoStack.push(cmd);
 		redoStack.clear();
-	}
+	}//end add
 	
 	public static boolean undo() {
 		boolean result = !undoStack.empty();
@@ -17,9 +17,9 @@ public class DrawHistory {
 			IUndoRedo c = undoStack.pop();
 			redoStack.push(c);
 			c.undo();
-		}
+		}//end if
 		return result;
-	}
+	}//end undo
 
 	public   static boolean redo() {
 		boolean result = !redoStack.empty();
@@ -27,7 +27,7 @@ public class DrawHistory {
 			IUndoRedo c = redoStack.pop();
 			undoStack.push(c);
 			c.redo();
-		}
+		}//end if
 		return result;
-	}
-}
+	}//end redo
+}//end drawhistory

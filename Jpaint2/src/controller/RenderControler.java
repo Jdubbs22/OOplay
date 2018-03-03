@@ -61,6 +61,36 @@ public class RenderControler {  //setting up a hub for rendering...allowing for 
 		case BLUE:
 		return java.awt.Color.BLUE;
 		
+		case CYAN:
+			return java.awt.Color.CYAN;
+			
+		case DARK_GRAY:
+			return java.awt.Color.DARK_GRAY;
+			
+		case GRAY:
+			return java.awt.Color.GRAY;
+			
+		case LIGHT_GRAY:
+			return java.awt.Color.LIGHT_GRAY;
+			
+		case MAGENTA:
+			return java.awt.Color.MAGENTA;
+			
+		case ORANGE:
+			return java.awt.Color.ORANGE;
+			
+		case PINK:
+			return java.awt.Color.PINK;
+			
+		case RED:
+			return java.awt.Color.RED;
+			
+		case WHITE:
+			return java.awt.Color.WHITE;
+			
+		case YELLOW:
+			return java.awt.Color.YELLOW;
+			
 		default: 
 			return java.awt.Color.GREEN;
 		}
@@ -68,17 +98,6 @@ public class RenderControler {  //setting up a hub for rendering...allowing for 
 		
 		
 	}//end chooseColor
-	
-	
-	public void chooseShadingType(IShape shape){
-		
-		ShapeShadingType shadeType = shape.getShadingType();
-		switch(shadeType){
-		case FILLED_IN:
-			
-		}
-		
-	}
 	
 	public void DrawShapeAtPoints(IShape shape){
 		

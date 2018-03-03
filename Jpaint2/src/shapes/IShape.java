@@ -1,4 +1,5 @@
 package shapes;
+import java.awt.Color;
 import java.awt.Point;
 
 import model.ShapeColor;
@@ -13,7 +14,7 @@ public interface IShape {
 	public ShapeColor getOutlineColor();
 	public ShapeColor getFillColor();
 	public ShapeShadingType getShadingType();
-	
+	public Color setColor();//added as possible solution for undo
 	Point getEndPoint();
 	
 	void setEndPoint(Point p);

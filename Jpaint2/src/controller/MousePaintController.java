@@ -1,5 +1,7 @@
 package controller;
 import java.awt.Color;
+import java.awt.Component;
+
 import undo_redoCommand.DrawHistory;
 import undo_redoCommand.drawShapeCommand;
 
@@ -25,6 +27,7 @@ public class MousePaintController {
 		Color color;
 		Point start;  //added for test
 		Point end;
+		
 		@Override
 	
 		public void mousePressed(MouseEvent e){

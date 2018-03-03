@@ -24,23 +24,23 @@ public void draw(IShape shape, Graphics2D renderer) {
 	int[] yPoints= {startY,endY,endY};
 	
 	renderer.drawPolygon(xPoints, yPoints, 3);
-	/*
+	
 	switch (shape.getShadingType()){
 	case FILLED_IN:
 		renderer.setColor(RenderControler.chooseColor(shape.getFillColor()));
-		renderer.fill();
+		renderer.fillPolygon(xPoints, yPoints, 3);
 		break;
 	case OUTLINE:
 		renderer.setColor(RenderControler.chooseColor(shape.getOutlineColor()));
-		renderer.draw(ellipse);
+		renderer.drawPolygon(xPoints, yPoints, 3);
 		break;
 	case OUTLINE_AND_FILLED_IN:
 		renderer.setColor(RenderControler.chooseColor(shape.getFillColor()));
-		renderer.fill(ellipse);
+		renderer.fillPolygon(xPoints, yPoints, 3);
 		renderer.setColor(RenderControler.chooseColor(shape.getOutlineColor()));
-		renderer.draw(ellipse);
+		renderer.drawPolygon(xPoints, yPoints, 3);
 		
-	}*/
+	}
 	
 }
 

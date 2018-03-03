@@ -20,8 +20,10 @@ public class PaintCanvas extends JComponent implements IPaintCanvas {
     
     	Ellipse2D.Double circle =
     			  new Ellipse2D.Double( 0,0, 200,200);
-    			 graphics.fill(circle);
-    			 
-    	
+    			 graphics.fill(circle);		 
+    }//end test draw
+    
+    public void wipeScreen(){
+    	repaint();
     }
 }

@@ -8,31 +8,7 @@ import model.ApplicationState;
 import model.IApplicationState;
 import shapes.ShapeName;
 public class ShapeFactory {
-/*
-	public static IShape creatRectangle(){
-		return new Rectangle();
-	}//end createRec
-	
-	public static IShape createElipse(){
-		return new Elipse();
-	}//end createEli
-	
-	public static IShape createTriangle(){
-		return new Triangle();
-	}//end createTri
-	
-	
-	private IApplicationState appState;
-	ApplicationState currentState;//??? see below
-	public ApplicationState getCurrentState() {///??? just a guess
-		return currentState;
-	}
-	*/
-	
-	//private ShapeFactory(IApplicationState appState){
-		
-//	}
-	
+
 	
 	
 	public static IShape createShape(Point startPoint, Point endPoint){
@@ -56,4 +32,5 @@ public class ShapeFactory {
 		}
 		return shape;
 	}
+	
 }//end shapefactory

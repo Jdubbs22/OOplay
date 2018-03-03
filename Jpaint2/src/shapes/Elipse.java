@@ -83,4 +83,10 @@ import model.ShapeShadingType;
 			
 		}//end draw
 
+	@Override
+	public Color setColor() {
+		Color clear = Color.WHITE;
+		return clear;
+	}
+
 }//end elipse

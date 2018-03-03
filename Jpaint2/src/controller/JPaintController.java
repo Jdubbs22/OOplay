@@ -12,6 +12,7 @@ public class JPaintController implements IJPaintController {
     public JPaintController(IUiModule uiModule, IApplicationState applicationState) {
         this.uiModule = uiModule;
         this.applicationState = applicationState;
+        
     }
 
     @Override
@@ -27,7 +28,11 @@ public class JPaintController implements IJPaintController {
         uiModule.addEvent(EventName.CHOOSE_START_POINT_ENDPOINT_MODE, () -> applicationState.setActiveStartAndEndPointMode());
         uiModule.addEvent(EventName.UNDO,() -> DrawHistory.undo());
         uiModule.addEvent(EventName.REDO, ()-> DrawHistory.redo());
-    }
+      //  uiModule.addEvent(EventName.COPY, () ->  someClass);
+      // uiModule.addEvent(EventName.PASTE, () ->   someclass); 
+        
+        
+    }//end setupevents
     
     
 }

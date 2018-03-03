@@ -79,4 +79,10 @@ import model.ShapeShadingType;
 			
 		}//end draw
 
+	@Override
+	public Color setColor() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }//end rectangle
