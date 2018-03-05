@@ -9,6 +9,7 @@ import model.ShapeShadingType;
 import model.ShapeType;
 import shapes.IShape;
 import shapes.ShapeFactory;
+import shapes.ShapesCollection;
 import strategy.*;
 
 import view.PaintCanvas;
@@ -35,7 +36,7 @@ public class RenderControler {  //setting up a hub for rendering...allowing for 
     	return instance;
 	}
 	private static RenderControler instance;
-	public static void initializeSingle(PaintCanvas component){
+	public static void initializeRenderSingle(PaintCanvas component){
 		if(instance != null){
 			   throw new RuntimeException("initialized called twice");
 		   }
@@ -46,6 +47,7 @@ public class RenderControler {  //setting up a hub for rendering...allowing for 
 		if(appState.getActiveShapeType() == ShapeType.ELLIPSE) drawStrat = new EllipseStrategy();
 		else if(appState.getActiveShapeType()==ShapeType.TRIANGLE) drawStrat = new TriangleStrategy();
 		else if (appState.getActiveShapeType()== ShapeType.RECTANGLE) drawStrat = new RectangleStrategy();
+	
 	}//end chooseshape
 	
 	public void chooseFill(){
@@ -105,10 +107,43 @@ public class RenderControler {  //setting up a hub for rendering...allowing for 
 		//colorStrat.setColor(render);
 		chooseShape();
 		drawStrat.draw(shape, render);
+	//	ShapesCollection CollectionInstance = ShapesCollection.getShapesCollectionInstance();
+	//	CollectionInstance.insertShape(shape);
 		
 	//	filledIn.setShadingType(render);
 		
 	}//end drawshapeatpoints
+	
+	public void refreshScreen(){
+		
+		
+	render.clearRect(0, 0, component.getWidth(), component.getHeight());
+		//couldn't get repaint to work so did above ^^^
+		
+//		component.validate();
+		//component.repaint();
+	/*	component.paint(render);
+		
+		render = component.getGraphics2D();
+
+		component.update(render);
+		
+		//component.wipeScreen();
+		 * */
+		 
+		
+		
+		for(IShape shape: ShapesCollection.getShapesCollectionInstance().getList()){
+			
+		DrawShapeAtPoints(shape);
+			
+			System.out.println("test of drawshape at points");
+		}//end for
+		
+		//component.update(render);
+	}//end clearscreen
+	
+	
 
 	
 	

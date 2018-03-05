@@ -15,7 +15,7 @@ public class ShapeFactory {
 		IShape shape = null;
 		ApplicationState current =ApplicationState.getInstance();
 		
-		switch (current.getActiveShapeType()){
+		switch (current.getActiveShapeType()){  //sets the current selected color(s) and shade type (strategy method draws the shadetype)
 		case ELLIPSE:
 			shape = new Elipse(startPoint, endPoint,current.getActivePrimaryColor(),
 					current.getActiveSecondaryColor(),

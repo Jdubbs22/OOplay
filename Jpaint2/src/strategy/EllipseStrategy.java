@@ -22,6 +22,7 @@ Ellipse2D ellipse= new Ellipse2D.Double( startX,  startY,  endX-startX,  endY-st
 	
 	renderer.draw(ellipse);
 	
+	
 	switch (shape.getShadingType()){
 	case FILLED_IN:
 		renderer.setColor(RenderControler.chooseColor(shape.getFillColor()));

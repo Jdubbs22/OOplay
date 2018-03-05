@@ -19,11 +19,12 @@ public class drawShapeCommand implements IUndoRedo, IRunCommand{
 	private Point endPoint;
 	private IShape shape;
 	private PaintCanvas pc;
-	//private Component c;//do I need this?
-	ShapesCollection shapesArray = new ShapesCollection();
+	
+	ShapesCollection shapesArray = ShapesCollection.getShapesCollectionInstance();
 	public drawShapeCommand(Point startPoint, Point endPoint) {
 		this.startPoint=startPoint;
 		this.endPoint=endPoint;
+		
 	}
 	
 	@Override
@@ -47,16 +48,14 @@ public class drawShapeCommand implements IUndoRedo, IRunCommand{
 	@Override
 	public void undo() {
 		//code to undo
-		
-		shape = ShapeFactory.createShape(startPoint, endPoint);
-		//shape.setColor();// can I just set it to all white???
-		
-		
+		RenderControler rendcont=  RenderControler.getInstance();
 		
 		//remove from shapes collection
-	//	shapesArray.removeShape(shape);
-	//	pc.wipeScreen();
+		shapesArray.removeShape(shape);
+		
 		System.out.println("undo pressed");
+		rendcont.refreshScreen();
+		
 	
 	}
 

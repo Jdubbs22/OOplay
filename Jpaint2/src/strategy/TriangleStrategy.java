@@ -25,7 +25,8 @@ public void draw(IShape shape, Graphics2D renderer) {
 	
 	renderer.drawPolygon(xPoints, yPoints, 3);
 	
-	switch (shape.getShadingType()){
+	switch (shape.getShadingType()){  //this strategy sets the outline and fill colors, factory does everything else
+	
 	case FILLED_IN:
 		renderer.setColor(RenderControler.chooseColor(shape.getFillColor()));
 		renderer.fillPolygon(xPoints, yPoints, 3);

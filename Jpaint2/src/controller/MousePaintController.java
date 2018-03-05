@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.Component;
 
 import undo_redoCommand.DrawHistory;
+import undo_redoCommand.MoveCommand;
 import undo_redoCommand.drawShapeCommand;
 
 import java.awt.Graphics2D;
@@ -13,6 +14,8 @@ import  java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Ellipse2D;
 
+import model.ApplicationState;
+import shapes.ShapesCollection;
 import view.PaintCanvas;
 public class MousePaintController {
 	//IJPaintController paintcontroller;
@@ -31,47 +34,55 @@ public class MousePaintController {
 		@Override
 	
 		public void mousePressed(MouseEvent e){
-			start = e.getPoint();
-			orginX = e.getX();
-			orginY = e.getY();
-		/*	shape = new Ellipse2D.Double(orginX,orginY,0,0);
-			//render.draw(shape);
-			System.out.println("Test of mouse");
-			triangle = new Polygon();  //???  */
-		
+			switch (ApplicationState.getInstance().getActiveStartAndEndPointMode()){
+			case DRAW:
+			case MOVE://similar to or
+				start = e.getPoint();
+				orginX = e.getX();
+				orginY = e.getY();
+				break;
 			
-		}//end mousepressed  
-	/*	@Override
-		public void mouseDragged(MouseEvent e){
-			int deltaX;
-			int deltaY;
-			int endX= e.getX();
-			int endY = e.getY();
-			deltaX = endX - orginX;
-			deltaY = endY - orginY;
+				
+			case SELECT:
+				
+				
+			}
 			
 			
-			shape.setFrame(orginX, orginY, deltaX, deltaY);
 			
-		//	render.draw(shape);
-			
-			System.out.println("test of mouseMoved");
-			
-		}//end mousemoved  */
+		}
 		
 		@Override
 		public void mouseReleased(MouseEvent e){
-			end = e.getPoint();
-			int endX= e.getX();
-			int endY = e.getY();
-			drawShapeCommand getCommand = new drawShapeCommand(start, end);
+			switch (ApplicationState.getInstance().getActiveStartAndEndPointMode()){
+			case DRAW:
+				end = e.getPoint();
+				int endX= e.getX();
+				int endY = e.getY();
+				drawShapeCommand getCommand = new drawShapeCommand(start, end);
+				DrawHistory.add(getCommand);
+				getCommand.run();
+				break;
+				
+			case MOVE:
+				end = e.getPoint();
+				MoveCommand command = new MoveCommand(start,end);
+				//DrawHistory.add(command);
+				command.run();
+				break;
+				
+			case SELECT:
+				
+				
+			}
+			
+			
 		//render.draw(shape); 
 		//render1.setColor(color.blue);
 		//render.fill(shape);
 		//	render.draw(triangle);
 		//	render.DrawShapeAtPoints(orginX, orginY, endX, endY);
-			DrawHistory.add(getCommand);
-			getCommand.run();
+		
 			
 		}//end mouseReleased
 		

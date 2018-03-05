@@ -31,14 +31,14 @@ public class Main {
         
         IJPaintController controller = new JPaintController(uiModule, ApplicationState.getInstance());  //sets up events ala  activePrimaryColor = ShapeColor.BLUE;Jpaint2/src/main/Main.java
         controller.setup();
-       RenderControler.initializeSingle(paintTest);
+       RenderControler.initializeRenderSingle(paintTest);
       //  paintTest.testDraw();  
-       // RenderControler rendControl = new RenderControler(paintTest,ApplicationState.getInstance());// replaced appstate
+     
        MousePaintController testMouse = new MousePaintController(RenderControler.getInstance()); //connecting mousepaintcontroller to rendercontroller
        paintTest.addMouseListener(testMouse.getListener()); 
        paintTest.addMouseMotionListener(testMouse.getListener());
-       
+      //try adding clear rect to make the screen grey
       
     }
-	//test of git
+
 }
