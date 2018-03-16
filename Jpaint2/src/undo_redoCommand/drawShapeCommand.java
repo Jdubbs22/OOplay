@@ -61,8 +61,9 @@ public class drawShapeCommand implements IUndoRedo, IRunCommand{
 
 	@Override
 	public void redo() {
-		RenderControler currentInstance = RenderControler.getInstance();
+	RenderControler currentInstance = RenderControler.getInstance();
 		currentInstance.DrawShapeAtPoints(shape);
+		
 		shapesArray.insertShape(shape);
 		//add back to shapes collection
 		System.out.println("Redo pressed");

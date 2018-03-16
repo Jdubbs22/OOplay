@@ -120,19 +120,6 @@ public class RenderControler {  //setting up a hub for rendering...allowing for 
 	render.clearRect(0, 0, component.getWidth(), component.getHeight());
 		//couldn't get repaint to work so did above ^^^
 		
-//		component.validate();
-		//component.repaint();
-	/*	component.paint(render);
-		
-		render = component.getGraphics2D();
-
-		component.update(render);
-		
-		//component.wipeScreen();
-		 * */
-		 
-		
-		
 		for(IShape shape: ShapesCollection.getShapesCollectionInstance().getList()){
 			
 		DrawShapeAtPoints(shape);

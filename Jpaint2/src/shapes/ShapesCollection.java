@@ -77,7 +77,7 @@ public class ShapesCollection {
 	}
 	
 // -----------------vvv---made into singleton---vvv---------------------------
-								//???
+								
 	
 /*	 private static void initializeShapesCollectionSingleton(){
 		   if(instance != null){
