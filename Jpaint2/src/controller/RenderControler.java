@@ -116,7 +116,7 @@ public class RenderControler {  //setting up a hub for rendering...allowing for 
 	
 	public void refreshScreen(){
 		
-	render.setBackground(Color.WHITE);	/// testing this remove if doesn't work
+	render.setBackground(Color.WHITE);	//used to fix bug where screen went grey after calling method
 	render.clearRect(0, 0, component.getWidth(), component.getHeight());
 		//couldn't get repaint to work so did above ^^^
 		
