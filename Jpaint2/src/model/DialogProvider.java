@@ -23,30 +23,30 @@ public class DialogProvider implements IDialogProvider {
         chooseSecondaryColorDialog = new ChooseSecondaryColorDialog(this.applicationState);
         chooseShadingTypeDialog = new ChooseShadingTypeDialog(this.applicationState);
         chooseStartAndEndPointModeDialog = new ChooseStartAndEndPointModeDialog(this.applicationState);
-    }
+    }//end construct
 
     @Override
     public IDialogChoice<ShapeType> getChooseShapeDialog() {
         return chooseShapeDialog;
-    }
+    }//end get
 
     @Override
     public IDialogChoice<ShapeColor> getChoosePrimaryColorDialog() {
         return choosePrimaryColorDialog;
-    }
+    }//end get
 
     @Override
     public IDialogChoice<ShapeColor> getChooseSecondaryColorDialog() {
         return chooseSecondaryColorDialog;
-    }
+    }//end get
 
     @Override
     public IDialogChoice<ShapeShadingType> getChooseShadingTypeDialog() {
         return chooseShadingTypeDialog;
-    }
+    }//end get
 
     @Override
     public IDialogChoice<StartAndEndPointMode> getChooseStartAndEndPointModeDialog() {
         return chooseStartAndEndPointModeDialog;
-    }
-}
+    }//end get
+}//end class

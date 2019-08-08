@@ -72,30 +72,28 @@ public class ShapesCollection {
 				return shape;
 		
 			
-		}
+		}//end for
 		return null;
-	}
+	}//end method
 	
 // -----------------vvv---made into singleton---vvv---------------------------
 								
-	
 /*	 private static void initializeShapesCollectionSingleton(){
 		   if(instance != null){
 			   throw new RuntimeException("initialize of shapes collection called twice");
 		   }
-		   instance = new ShapesCollection();
-		   
-		   
+		   instance = new ShapesCollection();  
 	   }*/
+	
 	 private static ShapesCollection instance ;
 	 
 	 public static ShapesCollection getShapesCollectionInstance(){
 	    	if(instance == null){
 	    		//throw new RuntimeException(" initialization of shapes collection has not been called");
 	    		instance = new ShapesCollection();
-	    		}
+	    		}//end if
 	    	return instance;
-	    }
+	    }//end method
 	 
 
 

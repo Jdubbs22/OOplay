@@ -10,26 +10,26 @@ public class ChooseShapeDialog implements IDialogChoice<ShapeType> {
     public ChooseShapeDialog(IApplicationState applicationState) {
 
         this.applicationState = applicationState;
-    }
+    }//end construct
 
     @Override
     public String getDialogTitle() {
         return "Shape";
-    }
+    }//end get
 
     @Override
     public String getDialogText() {
         return "Select a shape from the menu below:";
-    }
+    }//end get
 
     @Override
     public ShapeType[] getDialogOptions() {
         return ShapeType.values();
-    }
+    }//end get
 
     @Override
     public ShapeType getCurrentSelection() {
         return applicationState.getActiveShapeType();
-    }
-}
+    }//end get
+}//end class
 

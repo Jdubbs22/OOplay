@@ -25,7 +25,7 @@ public class drawShapeCommand implements IUndoRedo, IRunCommand{
 		this.startPoint=startPoint;
 		this.endPoint=endPoint;
 		
-	}
+	}//end constructor
 	
 	@Override
 	public void run() {
@@ -43,7 +43,7 @@ public class drawShapeCommand implements IUndoRedo, IRunCommand{
 		// add to shapescollection
 		//shapescollection.add
 		
-	}
+	}//end method
 
 	@Override
 	public void undo() {
@@ -57,7 +57,7 @@ public class drawShapeCommand implements IUndoRedo, IRunCommand{
 		rendcont.refreshScreen();
 		
 	
-	}
+	}//end method
 
 	@Override
 	public void redo() {
@@ -67,6 +67,6 @@ public class drawShapeCommand implements IUndoRedo, IRunCommand{
 		shapesArray.insertShape(shape);
 		//add back to shapes collection
 		System.out.println("Redo pressed");
-	}
+	}//end method
 
-}
+}//end class

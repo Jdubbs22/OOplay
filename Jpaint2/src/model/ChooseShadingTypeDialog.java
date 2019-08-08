@@ -10,26 +10,26 @@ public class ChooseShadingTypeDialog implements IDialogChoice<ShapeShadingType> 
     public ChooseShadingTypeDialog(IApplicationState applicationState) {
 
         this.applicationState = applicationState;
-    }
+    }//end construct
 
     @Override
     public String getDialogTitle() {
         return "Shading Type";
-    }
+    }//end get
 
     @Override
     public String getDialogText() {
         return "Select a shading type from the menu below:";
-    }
+    }//end get
 
     @Override
     public ShapeShadingType[] getDialogOptions() {
         return ShapeShadingType.values();
-    }
+    }//end get
 
     @Override
     public ShapeShadingType getCurrentSelection() {
         return applicationState.getActiveShapeShadingType();
-    }
-}
+    }//end get
+}//end class
 

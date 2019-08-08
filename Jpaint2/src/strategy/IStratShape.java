@@ -9,4 +9,4 @@ public interface IStratShape{
 	
 	void draw(IShape shape, Graphics2D renderer);
 	
-}
+}//end interface

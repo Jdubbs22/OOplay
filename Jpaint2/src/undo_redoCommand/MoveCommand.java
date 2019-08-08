@@ -19,28 +19,28 @@ public class MoveCommand implements IRunCommand, IUndoRedo {
 	public MoveCommand(Point start, Point end) {
 	this.start=start;
 	this.end=end;
-	}
+	}//end constructor
 
 	@Override
 	public void undo() {
 	shape.setOriginPostion(oldStartPoint);
 	shape.setEndPoint(oldEndPoint);	
 	RenderControler.getInstance().refreshScreen();
-	}
+	}//end method
 
 	@Override
 	public void redo() {
 		shape.setOriginPostion(newStartPoint);
 		shape.setEndPoint(newEndPoint);
 		RenderControler.getInstance().refreshScreen();
-	}
+	}//end method
 
 	@Override
 	public void run() {
 		shape= ShapesCollection.getShapesCollectionInstance().getShapeAtPoint(start);
 		if(shape == null){
 			return;
-		}
+		}//end if
 		DrawHistory.add(this);
 		oldStartPoint = shape.getOriginPosition();
 		oldEndPoint = shape.getEndPoint();
@@ -55,6 +55,6 @@ public class MoveCommand implements IRunCommand, IUndoRedo {
 		
 		
 		
-	}
+	}//end method
 
-}
+}//end class

@@ -32,16 +32,16 @@ public class RenderControler {  //setting up a hub for rendering...allowing for 
 	public static RenderControler getInstance(){
 		if(instance == null){
     		throw new RuntimeException(" initialization has not been called");
-    		}
+    		}//end if
     	return instance;
-	}
+	}//end get
 	private static RenderControler instance;
 	public static void initializeRenderSingle(PaintCanvas component){
 		if(instance != null){
 			   throw new RuntimeException("initialized called twice");
-		   }
+		   }//end if
 		instance = new RenderControler(component);
-	}
+	}//end method
 	
 	public void chooseShape(){
 		if(appState.getActiveShapeType() == ShapeType.ELLIPSE) drawStrat = new EllipseStrategy();
@@ -95,7 +95,7 @@ public class RenderControler {  //setting up a hub for rendering...allowing for 
 			
 		default: 
 			return java.awt.Color.GREEN;
-		}
+		}//end switch
 		
 		
 		

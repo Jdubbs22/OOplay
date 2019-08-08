@@ -13,7 +13,7 @@ import model.ShapeShadingType;
 	 Elipse(Point startPoint, Point endpoint){
 		 this.startPoint=startPoint;
 		 this.endPoint=endpoint;
-	 }
+	 }//end constructor
 	 
 	 Elipse(Point startPoint, Point endPoint,ShapeColor primary, ShapeColor secondary, ShapeShadingType shadeType){
 		 this.startPoint= startPoint;
@@ -21,7 +21,7 @@ import model.ShapeShadingType;
 		 this.primary = primary;
 		 this.secondary = secondary;
 		 this.shadeType = shadeType;
-	 }
+	 }//end constructor
 	 
 	 Point startPoint;
 	 Point endPoint;
@@ -87,6 +87,6 @@ import model.ShapeShadingType;
 	public Color setColor() {
 		Color clear = Color.WHITE;
 		return clear;
-	}
+	}//end set
 
 }//end elipse

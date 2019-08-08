@@ -29,9 +29,9 @@ public class ShapeFactory {
 			shape = new Triangle(startPoint, endPoint,current.getActivePrimaryColor(),
 					current.getActiveSecondaryColor(),current.getActiveShapeShadingType());
 			break;
-		}
+		}//end switch
 		return shape;
-	}
+	}//end method
 
 	
 }//end shapefactory

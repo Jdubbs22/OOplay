@@ -16,7 +16,7 @@ import model.ShapeShadingType;
 		 this.primary = primary;
 		 this.secondary = secondary;
 		 this.shadeType = shadeType;
-	 }
+	 }//end constructor
 
  Point startPoint;
  Point endPoint;
@@ -83,6 +83,6 @@ import model.ShapeShadingType;
 	public Color setColor() {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	}//end set
 
 }//end rectangle

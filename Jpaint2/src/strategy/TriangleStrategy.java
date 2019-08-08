@@ -41,9 +41,9 @@ public void draw(IShape shape, Graphics2D renderer) {
 		renderer.setColor(RenderControler.chooseColor(shape.getOutlineColor()));
 		renderer.drawPolygon(xPoints, yPoints, 3);
 		
-	}
+	}//end switch
 	
-}
+}//end method
 
 
 }//end EllipseStrategy

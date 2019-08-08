@@ -38,9 +38,9 @@ Ellipse2D ellipse= new Ellipse2D.Double( startX,  startY,  endX-startX,  endY-st
 		renderer.setColor(RenderControler.chooseColor(shape.getOutlineColor()));
 		renderer.draw(ellipse);
 		
-	}
+	}//end switch
 	
-}
+}//end method
 
 
 }//end EllipseStrategy

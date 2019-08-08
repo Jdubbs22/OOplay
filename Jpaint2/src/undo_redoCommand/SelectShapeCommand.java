@@ -6,6 +6,6 @@ public class SelectShapeCommand implements IRunCommand {
 	public void run() {
 		// TODO Auto-generated method stub
 		
-	}
+	}//end method
 
-}
+}//end class

@@ -13,12 +13,12 @@ public class JPaintController implements IJPaintController {
         this.uiModule = uiModule;
         this.applicationState = applicationState;
         
-    }
+    }//end construct
 
     @Override
     public void setup() {
         setupEvents();
-    }
+    }//end method
 
     private void setupEvents() {
         uiModule.addEvent(EventName.CHOOSE_SHAPE, () -> applicationState.setActiveShape());
@@ -35,5 +35,5 @@ public class JPaintController implements IJPaintController {
     }//end setupevents
     
     
-}
+}//end class
 

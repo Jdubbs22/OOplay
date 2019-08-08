@@ -37,8 +37,8 @@ public class Main {
        MousePaintController testMouse = new MousePaintController(RenderControler.getInstance()); //connecting mousepaintcontroller to rendercontroller
        paintTest.addMouseListener(testMouse.getListener()); 
        paintTest.addMouseMotionListener(testMouse.getListener());
-      //try adding clear rect to make the screen grey
+     
       
-    }
+    }//end main
 
-}
+}//end class
